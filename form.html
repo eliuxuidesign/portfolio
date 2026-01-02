@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="it">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Contattami come UX/UI designer freelance per collaborazioni con web agency o progetti digitali su misura.">
+
+    <title>Contattami</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon-elidesign.png">
+
+    <!-- Bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- myCSS-->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header-navbar -->
+    <header class="fixed-top z-3">
+        <div class="container-sm">
+            <nav class="navbar navbar-expand-lg bg-light bg-gradient rounded-5 shadow mt-3 px-3">
+                <a class="navbar-brand" href="index.html" aria-label="Torna alla home">
+                     <img src="../img/logo-elidesign.svg"
+                   alt="logo elidesign ux/ui designer freelance" class="logo">
+                </a>
+                <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse custom-collapse" id="navbarNav">
+                    <!-- close button -->
+                    <button type="button" class="btn-close d-md-none ms-auto mb-3" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-label="Chiudi menu"></button>
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#chi-sono">Chi sono</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#cosa-faccio">Cosa faccio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html#progetti">Progetti</a>
+                        </li>
+                    </ul>
+                    <a href="form.html" class="btn btn-primary btn-primary--navbar">Contattami</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <h1>Contattami</h1>
+            <p class="mb-5 mt-3">Compila il modulo qui sotto e verrai ricontattato entro 24 ore nel modo che preferisci
+                (email, telefono o
+                videocall). Nessun impegno, solo una chiacchierata per conoscere il tuo progetto e vedere se possiamo
+                lavorare
+                insieme.</p>
+
+            <form class="needs-validation" novalidate action="https://getform.io/f/azyqyxqb" method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="nome" name="nome" placeholder="Adam" required>
+                            <label for="nome">Nome</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="cognome" name="cognome" placeholder="Smith"
+                                required>
+                            <label for="cognome">Cognome</label>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="mail" name="mail"
+                                placeholder="name@example.com" required>
+                            <label for="mail">Email</label>
+                            <div class="invalid-feedback">
+                                Inserisci una mail valida, deve avere questo simbolo @
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            <input type="tel" class="form-control" id="tel" name="tel" placeholder="+39 348 456 9991"
+                                required>
+                            <label for="tel">Telefono</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <fieldset class="my-4 h-100">
+                            <legend class="h5 mb-3">Come posso aiutarti?</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo_cliente" id="radioPrivato"
+                                    value="Privato" required>
+                                <label class="form-check-label" for="radioPrivato">Sono un Privato e cerco qualcuno per
+                                    il mio sito</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="tipo_cliente" id="radioAgency"
+                                    value="Agenzia" required>
+                                <label class="form-check-label" for="radioAgency">Sono una Web Agency e cerco
+                                    collaborazioni</label>
+                                    <div class="invalid-feedback">Seleziona una delle due opzioni</div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-md-6">
+                        <fieldset class="my-4 h-100">
+                            <legend class="h5 mb-3">Come vuoi essere contattato?</legend>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metodo_contatto" id="contact-mail"
+                                    value="mail" required>
+                                <label class="form-check-label" for="contact-mail">E-mail</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metodo_contatto" id="call"
+                                    value="chiamata" required>
+                                <label class="form-check-label" for="call">Chiamata telefonica</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="metodo_contatto" id="videocall"
+                                    value="videocall" required>
+                                <label class="form-check-label" for="videocall">Video call (Zoom, Google Meet)</label>
+                                <div class="invalid-feedback">Seleziona come preferisci essere ricontattato</div>
+                            </div>
+                        </fieldset>
+                    </div>
+
+                </div>
+
+                <div class="row g-3 my-3 my-lg-5">
+                    <div class="col-12 col-lg-6">
+                        <div class="form-floating">
+                            <textarea class="form-control" placeholder="Scrivi il tuo messaggio" id="messaggio"
+                                style="height: 300px;"></textarea>
+                            <label for="messaggio">Messaggio</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <button class="btn btn-primary" type="submit">Invia messaggio</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer class="bg-dark text-white mt-2">
+        <div class="container">
+            <div class="row justify-content-between align-items-center gap-3">
+                <div class="col-auto">
+                    <a href="https://www.linkedin.com/in/elisabetta-brentari-55a6b7124/" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/eliuxuidesign" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://wa.me/393488936663" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="col-auto copyright">
+                    <p class="mb-0 small">
+                        &copy; <span id="currentYear"></span> - Tutti i diritti riservati
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <!-- my js script -->
+        <script src="js/custom.js"></script>
+</body>
+</html>

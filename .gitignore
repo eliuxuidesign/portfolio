@@ -1,0 +1,17 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Sass
+.sass-cache/
+
+# Node
+node_modules/
+
+# Logs
+*.log
+
+.vscode/
+
+*.map
+

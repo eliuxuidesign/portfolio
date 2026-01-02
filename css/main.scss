@@ -1,0 +1,833 @@
+// VARIABLES
+
+// Colori
+$color-bg: #FFF9E9;
+$color-text: #302B1D;
+$color-text-hover: #4B390B;
+$color-primary: #FBC53A;
+$color-primary-hover: #FBBF24;
+$color-secondary: #4B390B;
+$color-accent: #97A87A;
+$color-bg-accent: #CCD1B7;
+$color-white: #ffffff;
+$color-light: #E6E0D2;
+$color-card-bg: #fffefb;
+$color-border: #d1d0cd;
+
+// Font families
+$font-heading: 'Lato', sans-serif;
+$font-body: 'Fira Sans', sans-serif;
+
+// Spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 40px;
+
+// Border radius
+$radius-full: 50%;
+$radius-lg: 32px;
+$radius-sm: 2px;
+
+// Transitions
+$transition-fast: 0.2s ease-in-out;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.6s ease;
+
+// Shadows
+$shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.1);
+$shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 12px 24px rgba(48, 43, 29, 0.15);
+
+// Breakpoints
+$breakpoint-mobile: 576px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+
+
+// MIXINS
+// Responsive mixins
+@mixin mobile {
+    @media (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+@mixin desktop-up {
+    @media (min-width: $breakpoint-tablet) {
+        @content;
+    }
+}
+
+// Transition mixin
+@mixin transition($properties: all, $duration: $transition-normal) {
+    transition: $properties $duration;
+}
+
+// Flexbox centering
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body {
+    background-color: $color-bg;
+    font-family: $font-body;
+    color: $color-text;
+    padding-top: 100px;
+}
+
+// TYPOGRAPHY
+// Headings base
+%heading-base {
+    font-family: $font-heading;
+    color: $color-text;
+}
+
+h1, h2, h3,
+.h1, .h2, .h3 {
+    @extend %heading-base;
+}
+
+h1, .h1 {
+    font-size: 44px;
+    line-height: 1.2;
+    font-weight: 600;
+
+    @include tablet {
+        font-size: 32px;
+    }
+
+    @include mobile {
+        font-size: 28px;
+    }
+}
+
+h2, .h2 {
+    font-size: 32px;
+    line-height: 1.25;
+    font-weight: 600;
+    margin-bottom: $spacing-sm;
+
+    @include tablet {
+        font-size: 28px;
+    }
+
+    @include mobile {
+        font-size: 24px;
+    }
+}
+
+h3, .h3 {
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 500;
+    margin-bottom: $spacing-sm;
+
+    @include tablet {
+        font-size: 24px;
+    }
+
+    @include mobile {
+        font-size: 20px;
+    }
+}
+
+// Body text
+p, dd, li {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+    max-width: 700px;
+
+    @include tablet {
+        font-size: 16px;
+    }
+}
+
+dt {
+    font-family: $font-heading;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    @include tablet {
+        font-size: 16px;
+    }
+}
+
+// Form elements
+label, .form-label {
+    font-family: $font-heading;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+
+    @include tablet {
+        font-size: 16px;
+    }
+}
+
+// Custom text styles
+.subtitle {
+    font-size: 20px;
+    line-height: 1.25;
+    font-weight: 600;
+
+    @include tablet {
+        font-size: 18px;
+    }
+
+    @include mobile {
+        font-size: 16px;
+    }
+}
+
+.text-body-secondary {
+    font-family: $font-heading;
+    font-size: 18px;
+}
+
+.hero-h2 {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.2;
+
+    @include tablet {
+        font-size: 14px;
+    }
+}
+
+
+// SPACING SECTION
+section {
+  margin-bottom: 88px;
+
+  @include tablet {
+    margin-bottom: 48px;
+  }
+
+  @include mobile {
+    margin-bottom: 40px;
+  }
+}
+
+// BUTTONS
+.btn {
+    font-family: $font-heading;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: $radius-lg;
+    background-image: none;
+    @include transition(all, $transition-fast);
+    width: fit-content;
+}
+
+
+.btn-primary {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    border-width: 2px;
+    color: $color-secondary;
+    padding: 8px 16px;
+
+    &:hover {
+        background-color: $color-primary-hover;
+        border-color: $color-primary-hover;
+        color: $color-secondary;
+    }
+}
+
+// Primary button navbar
+.btn-primary--navbar {
+    padding: 12px 24px;
+}
+
+// Secondary button
+.btn-secondary {
+    font-family: $font-heading;
+    font-weight: 600;
+    background-color: transparent;
+    border: 2px solid $color-secondary;
+    color: $color-secondary;
+    padding: 8px 16px;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+        color: $color-white;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 0.25rem rgba(75, 57, 11, 0.25);
+    }
+}
+
+// Link styled as button
+.a-btn-primary {
+    text-decoration: none;
+    color: $color-secondary;
+}
+
+// NAVIGATION
+.custom-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.nav-link {
+  font-family: $font-heading;
+    font-size: 18px;
+    font-weight: 400;
+    color: $color-text;
+    margin-right: $spacing-sm;
+    @include transition;
+
+    &:hover {
+        color: $color-text-hover;
+        transform: translateY(-3px);
+    }
+}
+
+
+// HERO SECTION
+#hero-section {
+    background-color: $color-bg-accent;
+    height: 90vh;
+    margin-top: -100px;
+    display: flex;
+    align-items: center;   // centro verticale
+  
+    @include desktop {
+        height: 500px;
+    }
+
+    @include tablet {
+        height: 400px;
+    }
+
+    @include mobile {
+        height: 500px;
+    }
+}
+
+// CARDS
+.card {
+    border-radius: $radius-lg;
+    border: 1px solid $color-border;
+    @include transition(transform box-shadow);
+    overflow: hidden;
+    background-color: $color-card-bg;
+    height: 100%;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: $shadow-lg;
+    }
+
+    // Card image
+    &-img-top {
+        height: 200px;
+        object-fit: contain;
+        object-position: center;
+        background-color: $color-primary;
+    }
+
+    // Card title
+    &-title {
+        text-align: left;
+        color: $color-secondary;
+        font-family: $font-heading;
+        font-weight: 400;
+        font-size: 18px;
+        padding: 0.5rem 0;
+
+        @include mobile {
+            font-size: 16px;
+        }
+    }
+
+    // Card list items
+    .list-group-item {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        border: none;
+        padding: 0.5rem 0;
+        background-color: transparent;
+
+        @include mobile {
+            font-size: 14px;
+        }
+    }
+
+    // CTA card variant
+    &.cta {
+        max-width: fit-content;
+        padding: $spacing-sm;
+
+        &:hover {
+            transform: none;
+            box-shadow: $shadow-lg;
+        }
+    }
+}
+
+// CARD CLIENTE HOME PAGE
+#cosa-faccio {
+    .card-target {  
+    height: 100%;
+
+    &:hover {
+        transform: none;
+        box-shadow: $shadow-lg;
+    }
+
+
+    }
+
+    .card-header{
+        background-color: $color-primary;
+        color: $color-secondary;
+        padding-left: $spacing-md;
+    }
+
+    .card-body {
+       padding: $spacing-md;
+    }
+}
+
+
+
+// FLIP CARDS
+.flip-checkbox {
+    display: none;
+}
+
+.flip-card {
+    display: block;
+    background-color: transparent;
+    height: 250px;
+    perspective: 1000px;
+    cursor: pointer;
+
+    &-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        @include transition(transform, $transition-slow);
+        transform-style: preserve-3d;
+    }
+
+    &:hover &-inner {
+        @include desktop-up {
+            transform: rotateY(180deg);
+        }
+    }
+
+    &-front,
+    &-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border: 1px solid #dee2e6;
+        border-radius: $radius-lg;
+        @include flex-center;
+        flex-direction: column;
+        padding: 2rem;
+        box-shadow: $shadow-md;
+        background: $color-card-bg;
+        color: $color-secondary;
+    }
+
+    &-front {
+        i {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: $color-secondary;
+
+            @include mobile {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 0;
+
+            @include mobile {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    &-back {
+        transform: rotateY(180deg);
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+
+            @include mobile {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    @include mobile {
+        height: 250px;
+    }
+
+    // Mobile click to flip
+    @include tablet {
+        &:hover &-inner {
+            transform: none;
+        }
+
+        .flip-checkbox:checked + & &-inner {
+            transform: rotateY(180deg);
+        }
+    }
+}
+
+// WORKFLOW SECTION
+#workflow {
+    overflow: hidden;
+}
+
+.workflow-phase {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 4rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #dee2e6;
+    opacity: 0;
+    transform: translateX(30px);
+    animation: slideInPhase 0.8s ease forwards;
+
+    &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+            animation-delay: 0.4s + ($i * 0.4s);
+        }
+    }
+
+    @include tablet {
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 0;
+    }
+
+    @include mobile {
+        gap: 0px;
+    }
+}
+
+.phase-number {
+    font-family: $font-heading;
+    font-size: 3rem;
+    font-weight: 700;
+    color: $color-accent;
+    min-width: 80px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+        font-size: 2rem;
+        min-width: auto;
+    }
+
+    @include mobile {
+        font-size: 1.5rem;
+    }
+}
+
+.phase-content {
+    h3 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+
+        @include tablet {
+            font-size: 1.25rem;
+        }
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.6;
+        max-width: 70ch;
+
+        @include tablet {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+
+// PROJECT GRID
+.project-grid-container {
+    display: grid;
+    grid-template-columns: minmax(auto, 600px);
+    justify-content: flex-start;
+    gap: $spacing-md;
+}
+
+#progetto-ecodream,
+#progetto-widmann {
+    dd{
+        margin-bottom: $spacing-lg;
+        max-width: 50ch;
+
+        @include tablet {
+            margin-bottom: $spacing-md;
+        }
+    }
+}
+
+// CAROUSEL
+#carouselExampleIndicators {
+    margin-bottom: $spacing-xl;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(63%) sepia(63%) saturate(809%) hue-rotate(11deg) brightness(93%) contrast(92%);
+}
+
+.carousel-indicators {
+    [data-bs-target] {
+        background-color: #d6d0c2;
+        width: 30px;
+        height: 4px;
+        border-radius: $radius-sm;
+        opacity: 1;
+
+        &:hover {
+            background-color: $color-primary-hover;
+        }
+    }
+
+    .active {
+        background-color: $color-primary-hover !important;
+    }
+}
+
+.widmann-img {
+    object-fit: contain;
+    max-height: 500px;
+}
+
+
+// FORMS
+fieldset {
+    border: 1px solid #d6d0c2;
+    border-radius: $radius-lg;
+    padding: $spacing-lg $spacing-md;
+}
+
+.form-check-input {
+    border-color: $color-text;
+
+    &:checked {
+        background-color: $color-primary-hover;
+        border-color: $color-primary-hover;
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+    }
+}
+
+
+// FOOTER
+.copyright p {
+    color: $color-light;
+}
+
+footer { 
+    padding: 24px 0px;
+    a {
+        color: $color-light;
+        text-decoration: none;
+        font-size: 1.5rem;
+        margin-right: 1.5rem;
+        display: inline-block;
+        @include transition;
+
+        &:hover {
+            color: $color-primary-hover;
+            transform: translateY(-3px);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        i {
+            color: inherit;
+        }
+
+        @include tablet {
+            font-size: 1rem;
+            margin-right: 1rem;
+        }
+    }
+}
+
+
+// SKILLS SECTION - web agency 
+.skill {
+    display: flex;
+    align-items: center;
+    gap: $spacing-xl;
+    margin-bottom: $spacing-lg;
+
+    @include tablet {
+        flex-direction: column;
+        gap: $spacing-sm;
+        align-items: flex-start;
+
+        strong {
+            display: block;
+        }
+    }
+
+    p {
+  margin: 0;
+  }
+}
+
+#imprese,
+#agency {
+    @include tablet {
+        margin-bottom: 48px;
+    }
+}
+
+
+// PROFILE IMAGE
+@include tablet{
+  .profile-img {
+    width: 240px;
+    height: 240px;
+    border-radius: $radius-full;
+    object-fit: contain;
+    background-color: $color-primary;
+  }
+}
+
+
+// MOBILE MENU
+@include tablet {
+    .custom-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80vw;
+        height: 100vh;
+        background-color: $color-accent;
+        z-index: 1050;
+        padding: 2rem;
+        overflow-y: auto;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.collapsing {
+            @include transition(transform);
+        }
+
+        .navbar-nav {
+            margin: auto;
+            text-align: center;
+        }
+
+        .nav-link {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        .btn {
+            margin-top: 2rem;
+            width: 100%;
+        }
+    }
+}
+
+
+// ANIMATIONS
+@keyframes slideInPhase {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+// CV SECTION 
+#contact-info{
+    a {
+        font-family: $font-body;
+        font-size: 16px;
+        color: $color-text;
+    }
+}
+
+// LOGO
+.logo {
+  height: 24px; /* Mobile */
+  width: auto;
+  transition: height 0.3s ease;
+}
+
+/* Tablet e desktop */
+@media (min-width: 768px) {
+  .logo {
+    height: 32px;
+  }
+}
+
+/* Desktop large */
+@media (min-width: 1200px) {
+  .logo {
+    height: 40px;
+  }
+}
