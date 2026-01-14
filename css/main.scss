@@ -831,3 +831,23 @@ footer {
     height: 40px;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  // Sfondo e testo
+  body {
+    background-color: #1a1814;
+    color: #E6E0D2;
+  }
+  
+  h1, h2, h3, p {
+    color: #E6E0D2;
+  }
+  
+  // Hero
+  #hero-section {
+    background-color: #2d2922;
+  }
+  
+  // Bottoni mantengono colori (giallo già visibile su scuro)
+  // Non serve cambiarli!
+}
