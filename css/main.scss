@@ -1,17 +1,18 @@
 // VARIABLES
 
 // Colori
-$color-bg: #FFF9E9;
+$color-bg: #FFFBF2;
 $color-text: #302B1D;
 $color-text-hover: #4B390B;
 $color-primary: #FBC53A;
+$color-primary-300: #FCD266;
 $color-primary-hover: #FBBF24;
 $color-secondary: #4B390B;
 $color-accent: #97A87A;
 $color-bg-accent: #CCD1B7;
-$color-white: #ffffff;
+$color-white: #FFF9E9;
 $color-light: #E6E0D2;
-$color-card-bg: #fffefb;
+$color-card-bg: #FFFEFB;
 $color-border: #d1d0cd;
 
 // Font families
@@ -410,113 +411,27 @@ section {
     }
 
     .card-header{
-        background-color: $color-primary;
+        background-color: $color-primary-300;
         color: $color-secondary;
-        padding-left: $spacing-md;
+        padding-left: 48px;
+        font-weight: 500;
     }
 
     .card-body {
-       padding: $spacing-md;
+       padding: 24px 48px;
+       margin-bottom: $spacing-sm;
     }
 }
 
 
-
-// FLIP CARDS
-.flip-checkbox {
-    display: none;
+// Card-features PMI
+.feature-card{
+   text-align: center;
+   border: 1px solid $color-border;
+   padding: $spacing-md;
+   margin: $spacing-sm;
 }
 
-.flip-card {
-    display: block;
-    background-color: transparent;
-    height: 250px;
-    perspective: 1000px;
-    cursor: pointer;
-
-    &-inner {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        @include transition(transform, $transition-slow);
-        transform-style: preserve-3d;
-    }
-
-    &:hover &-inner {
-        @include desktop-up {
-            transform: rotateY(180deg);
-        }
-    }
-
-    &-front,
-    &-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        backface-visibility: hidden;
-        border: 1px solid #dee2e6;
-        border-radius: $radius-lg;
-        @include flex-center;
-        flex-direction: column;
-        padding: 2rem;
-        box-shadow: $shadow-md;
-        background: $color-card-bg;
-        color: $color-secondary;
-    }
-
-    &-front {
-        i {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            color: $color-secondary;
-
-            @include mobile {
-                font-size: 3rem;
-                margin-bottom: 1rem;
-            }
-        }
-
-        h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin: 0;
-
-            @include mobile {
-                font-size: 1.25rem;
-            }
-        }
-    }
-
-    &-back {
-        transform: rotateY(180deg);
-
-        p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-
-            @include mobile {
-                font-size: 0.9rem;
-            }
-        }
-    }
-
-    @include mobile {
-        height: 250px;
-    }
-
-    // Mobile click to flip
-    @include tablet {
-        &:hover &-inner {
-            transform: none;
-        }
-
-        .flip-checkbox:checked + & &-inner {
-            transform: rotateY(180deg);
-        }
-    }
-}
 
 // WORKFLOW SECTION
 #workflow {
@@ -832,22 +747,23 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  // Sfondo e testo
-  body {
-    background-color: #1a1814;
-    color: #E6E0D2;
-  }
+
+// @media (prefers-color-scheme: dark) {
+//   // Sfondo e testo
+//   body {
+//     background-color: #1a1814;
+//     color: #E6E0D2;
+//   }
   
-  h1, h2, h3, p {
-    color: #E6E0D2;
-  }
+//   h1, h2, h3, p {
+//     color: #E6E0D2;
+//   }
   
-  // Hero
-  #hero-section {
-    background-color: #2d2922;
-  }
+//   // Hero
+//   #hero-section {
+//     background-color: #2d2922;
+//   }
   
-  // Bottoni mantengono colori (giallo già visibile su scuro)
-  // Non serve cambiarli!
-}
+//   // Bottoni mantengono colori (giallo già visibile su scuro)
+//   // Non serve cambiarli!
+// }
