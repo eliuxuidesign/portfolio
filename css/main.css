@@ -608,6 +608,11 @@ footer a i {
     height: 24px; /* Tablet */
   }
 }
+@media (min-width: 1200px) {
+  .logo {
+    height: 30px; /* Tablet */
+  }
+}
 .logo-dark {
   display: none;
 }
