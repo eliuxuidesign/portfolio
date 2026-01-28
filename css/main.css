@@ -156,15 +156,15 @@ section {
 }
 
 .btn-primary {
-  background-color: #FBC53A;
-  border-color: #FBC53A;
+  background-color: #FFC93D;
+  border-color: #FFC93D;
   border-width: 2px;
   color: #4B390B;
   padding: 8px 16px;
 }
 .btn-primary:hover {
-  background-color: #FBBF24;
-  border-color: #FBBF24;
+  background-color: #FFBC10;
+  border-color: #FFBC10;
   color: #4B390B;
 }
 
@@ -194,6 +194,11 @@ section {
   color: #4B390B;
 }
 
+.navbar.navbar-custom {
+  background-color: #e3ead9;
+  background-image: none;
+}
+
 .custom-toggler {
   border: none;
   padding: 0.25rem 0.5rem;
@@ -213,7 +218,7 @@ section {
   transition: all 0.3s ease;
 }
 .nav-link:hover {
-  color: #4B390B;
+  color: #513D08;
   transform: translateY(-3px);
 }
 
@@ -258,7 +263,7 @@ section {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
-  background-color: #FBC53A;
+  background-color: #FFC93D;
 }
 .card-title {
   text-align: left;
@@ -448,10 +453,10 @@ section {
   opacity: 1;
 }
 .carousel-indicators [data-bs-target]:hover {
-  background-color: #FBBF24;
+  background-color: #FFBC10;
 }
 .carousel-indicators .active {
-  background-color: #FBBF24 !important;
+  background-color: #FFBC10 !important;
 }
 
 .widmann-img {
@@ -470,8 +475,8 @@ fieldset {
   border-color: #302B1D;
 }
 .form-check-input:checked {
-  background-color: #FBBF24;
-  border-color: #FBBF24;
+  background-color: #FFBC10;
+  border-color: #FFBC10;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
 }
 
@@ -491,7 +496,7 @@ footer a {
   transition: all 0.3s ease;
 }
 footer a:hover {
-  color: #FBBF24;
+  color: #FFBC10;
   transform: translateY(-3px);
 }
 footer a:last-child {
@@ -541,7 +546,7 @@ footer a i {
     border-radius: 50%;
     -o-object-fit: contain;
        object-fit: contain;
-    background-color: #FBC53A;
+    background-color: #FFC93D;
   }
 }
 @media (max-width: 768px) {
@@ -593,20 +598,98 @@ footer a i {
 }
 
 .logo {
-  height: 24px; /* Mobile */
+  height: 18px; /* Mobile */
   width: auto;
   transition: height 0.3s ease;
 }
 
-/* Tablet e desktop */
 @media (min-width: 768px) {
   .logo {
-    height: 32px;
+    height: 24px; /* Tablet */
   }
 }
-/* Desktop large */
-@media (min-width: 1200px) {
-  .logo {
-    height: 40px;
+.logo-dark {
+  display: none;
+}
+
+.icon-dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body, #hero-section {
+    background-color: #2d2922;
+    color: #E6E0D2;
+  }
+  h1, h2, h3, p {
+    color: #E6E0D2;
+    font-weight: 400;
+  }
+  .btn-primary {
+    background-color: #FFCA42;
+    border-color: #FFCA42;
+    color: #4B390B;
+  }
+  .btn-primary:hover {
+    background-color: #FFBC10;
+    border-color: #FFBC10;
+    color: #4B390B;
+  }
+  .btn-secondary {
+    background-color: #FFD770;
+    color: #4B390B;
+    border: 2px solid #FFD770;
+  }
+  .btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+    background-color: #F3B81F;
+    border-color: #F3B81F;
+    color: #4B390B;
+  }
+  .a-btn-primary {
+    color: #4B390B;
+  }
+  .card {
+    background-color: #37352f;
+    border: #37352f;
+    color: #E6E0D2;
+  }
+  .card .card-target {
+    color: #91762E;
+  }
+  .card .card-title {
+    color: #E6E0D2;
+  }
+  .card li {
+    color: #E6E0D2;
+  }
+  .navbar.navbar-custom {
+    background-color: rgb(57, 56, 52);
+    background-image: none;
+  }
+  .navbar.navbar-custom .nav-link {
+    color: #E6E0D2;
+  }
+  .navbar.navbar-custom .nav-link:hover {
+    color: #FFD770;
+  }
+  .navbar.navbar-custom .nav-link.active {
+    color: #E6E0D2;
+    font-weight: 500;
+  }
+  .navbar.navbar-custom .nav-link.active:hover {
+    color: #FFD770;
+  }
+  .icon-light {
+    display: none;
+  }
+  .icon-dark {
+    display: inline-block;
+    width: 32px;
+  }
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: inline-block;
   }
 }/*# sourceMappingURL=main.css.map */

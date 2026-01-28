@@ -62,3 +62,49 @@ if (carousel) {
                 }, false)
             })
         })()
+
+
+        // Link attivati automaticamente della navbar
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Seleziona tutti i link della navbar
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    
+    console.log('Link trovati:', navLinks.length);
+    console.log('Sezioni trovate:', sections.length);
+    
+    // Opzioni per l'Intersection Observer
+    const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -70% 0px',
+        threshold: 0
+    };
+    
+    // Callback quando una sezione entra/esce dalla vista
+    const observerCallback = (entries) => {
+        entries.forEach(entry => {
+            console.log('Sezione:', entry.target.id, 'Visibile:', entry.isIntersecting);
+            
+            if (entry.isIntersecting) {
+                // Rimuovi active da tutti i link
+                navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Aggiungi active al link corrispondente
+                const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                    console.log('Active aggiunto a:', entry.target.id);
+                }
+            }
+        });
+    };
+    
+    // Crea l'observer
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    
+    // Osserva tutte le sezioni
+    sections.forEach(section => observer.observe(section));
+    
+}); // Fine DOMContentLoaded

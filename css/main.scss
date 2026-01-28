@@ -3,10 +3,10 @@
 // Colori
 $color-bg: #FFFBF2;
 $color-text: #302B1D;
-$color-text-hover: #4B390B;
-$color-primary: #FBC53A;
+$color-text-hover: #513D08;
+$color-primary: #FFC93D;
 $color-primary-300: #FCD266;
-$color-primary-hover: #FBBF24;
+$color-primary-hover: #FFBC10;
 $color-secondary: #4B390B;
 $color-accent: #97A87A;
 $color-bg-accent: #CCD1B7;
@@ -14,6 +14,15 @@ $color-white: #FFF9E9;
 $color-light: #E6E0D2;
 $color-card-bg: #FFFEFB;
 $color-border: #d1d0cd;
+
+$color-primary-dark: #FFCA42;
+$color-primary-hover-dark: #F3B81F;
+$color-primary-300-dark: #FFD770;
+$color-bg-dark: #2d2922;
+$color-text-dark: #E6E0D2;
+$color-secondary-dark: #917F2E;
+$color-navbar-dark: rgb(57, 56, 52);
+
 
 // Font families
 $font-heading: 'Lato', sans-serif;
@@ -288,6 +297,11 @@ section {
 }
 
 // NAVIGATION
+.navbar.navbar-custom {
+    background-color: #e3ead9;
+    background-image: none;
+}
+
 .custom-toggler {
     border: none;
     padding: 0.25rem 0.5rem;
@@ -726,44 +740,128 @@ footer {
     }
 }
 
-// LOGO
+// LOGO - Versione compatta
 .logo {
-  height: 24px; /* Mobile */
+  height: 18px; /* Mobile */
   width: auto;
   transition: height 0.3s ease;
 }
 
-/* Tablet e desktop */
 @media (min-width: 768px) {
   .logo {
-    height: 32px;
+    height: 24px; /* Tablet */
   }
 }
 
-/* Desktop large */
-@media (min-width: 1200px) {
-  .logo {
-    height: 40px;
-  }
+.logo-dark {
+    display: none;
 }
 
+.icon-dark {
+    display: none;
+}
 
-// @media (prefers-color-scheme: dark) {
-//   // Sfondo e testo
-//   body {
-//     background-color: #1a1814;
-//     color: #E6E0D2;
-//   }
+// DARK THEME
+@media (prefers-color-scheme: dark) {
+  // Sfondo e testo
+  body, #hero-section {
+    background-color: $color-bg-dark;
+    color: $color-text-dark;
+  }
   
-//   h1, h2, h3, p {
-//     color: #E6E0D2;
-//   }
+  h1, h2, h3, p {
+    color: $color-text-dark;
+    font-weight: 400;
+  }
   
-//   // Hero
-//   #hero-section {
-//     background-color: #2d2922;
-//   }
-  
-//   // Bottoni mantengono colori (giallo già visibile su scuro)
-//   // Non serve cambiarli!
-// }
+  .btn-primary {
+    background-color: $color-primary-dark;
+    border-color: $color-primary-dark;
+    color: $color-secondary;
+
+    &:hover {
+        background-color: $color-primary-hover;
+        border-color: $color-primary-hover;
+        color: $color-secondary;
+    }
+}
+
+// Secondary button
+.btn-secondary {
+    background-color: $color-primary-300-dark;
+    color: $color-secondary;
+    border: 2px solid $color-primary-300-dark;
+
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $color-primary-hover-dark;
+        border-color: $color-primary-hover-dark;
+        color: $color-secondary;
+    }
+}
+
+// Link styled as button
+.a-btn-primary {
+    color: $color-secondary;
+}
+
+.card {
+        background-color: #37352f;
+        border: #37352f;
+        color: $color-text-dark;
+
+        .card-target{
+            color: #91762E;
+        }
+
+        .card-title {
+            color: $color-text-dark;
+        }
+
+        li{
+            color: $color-text-dark;
+        }
+
+}
+
+.navbar.navbar-custom {
+    background-color: $color-navbar-dark;
+    background-image: none;
+
+    .nav-link {
+        color: $color-text-dark;
+
+        &:hover {
+            color: $color-primary-300-dark;
+        }
+
+        &.active {
+            color: $color-text-dark;
+            font-weight: 500; 
+            
+            &:hover {
+                color: $color-primary-300-dark;
+            }
+        }
+    }
+}
+
+.icon-light {
+        display: none;
+    }
+
+.icon-dark {
+        display: inline-block;
+        width: 32px;
+    }
+
+.logo-light {
+        display: none;
+    }
+    
+.logo-dark {
+        display: inline-block;
+    }
+}
+
