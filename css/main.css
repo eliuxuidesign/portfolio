@@ -555,7 +555,7 @@ footer a i {
     top: 0;
     right: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: #97A87A;
     z-index: 1050;
     padding: 2rem;
