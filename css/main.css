@@ -1,3 +1,7 @@
+:root {
+  color-scheme: light dark;
+}
+
 body {
   background-color: #FFFBF2;
   font-family: "Fira Sans", sans-serif;
