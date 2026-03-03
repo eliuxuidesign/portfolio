@@ -195,7 +195,7 @@ section {
 }
 
 .navbar.navbar-custom {
-  background-color: #FFFBF2;
+  background-color: #e3ead9;
   background-image: none;
 }
 
@@ -554,7 +554,7 @@ footer a i {
     position: fixed;
     top: 0;
     right: 0;
-    width: 80vw;
+    width: 100%;
     height: 100vh;
     background-color: #97A87A;
     z-index: 1050;
