@@ -107,4 +107,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Osserva tutte le sezioni
     sections.forEach(section => observer.observe(section));
     
-}); // Fine DOMContentLoaded
+});
+
+    // Chiudi il menu mobile al click su un link di navigazione
+document.querySelectorAll('#navbarNav .nav-link').forEach(link => {
+  link.addEventListener('click', () => {
+    const navbarCollapse = document.querySelector('#navbarNav');
+    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+    if (bsCollapse) {
+      bsCollapse.hide();
+    }
+  });
+});
