@@ -696,9 +696,13 @@ footer a i {
   .navbar.navbar-custom .nav-link.active:hover {
     color: #FFD770;
   }
+}
+@media (prefers-color-scheme: dark) and (max-width: 768px) {
   .profile-img {
     background-color: #FFCA42;
   }
+}
+@media (prefers-color-scheme: dark) {
   .icon-light {
     display: none;
   }
