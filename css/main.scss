@@ -692,7 +692,7 @@ footer {
         right: 0;
         width: 100%;
         height: 100%;
-        background-color: $color-accent-dark;
+        background-color: $color-accent;
         z-index: 1050;
         padding: 2rem;
         overflow-y: none;
@@ -871,6 +871,43 @@ footer {
     background-color: $color-primary-dark;
     border-radius: 50%; 
   }
+}
+
+@include tablet {
+    .custom-collapse {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $color-accent-dark;
+        z-index: 1050;
+        padding: 2rem;
+        overflow-y: none;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.collapsing {
+            @include transition(transform);
+        }
+
+        .navbar-nav {
+            margin: auto;
+            text-align: center;
+        }
+
+        .nav-link {
+            font-size: 1.5rem;
+            padding: 1rem;
+        }
+
+        .btn {
+            margin-top: 2rem;
+            width: 100%;
+        }
+    }
 }
 
 .icon-light {
