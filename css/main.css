@@ -673,7 +673,7 @@ footer a i {
        object-fit: contain;
     -o-object-position: center;
        object-position: center;
-    background-color: #FFC93D;
+    background-color: #FFCA42;
   }
   .navbar.navbar-custom {
     background-color: rgb(57, 56, 52);
@@ -691,6 +691,9 @@ footer a i {
   }
   .navbar.navbar-custom .nav-link.active:hover {
     color: #FFD770;
+  }
+  .profile-img {
+    background-color: #FFCA42;
   }
   .icon-light {
     display: none;
