@@ -865,9 +865,12 @@ footer {
     }
 }
 
+@include tablet{
 .profile-img {
     background-color: $color-primary-dark;
+    border-radius: 50%;
   }
+}
 
 .icon-light {
         display: none;
