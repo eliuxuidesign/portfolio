@@ -834,7 +834,7 @@ footer {
         height: 200px;
         object-fit: contain;
         object-position: center;
-        background-color: $color-primary;
+        background-color: $color-primary-dark;
     }
 
 }
@@ -860,6 +860,10 @@ footer {
         }
     }
 }
+
+.profile-img {
+    background-color: $color-primary-dark;
+  }
 
 .icon-light {
         display: none;
