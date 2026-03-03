@@ -753,6 +753,13 @@ footer {
   }
 }
 
+@media (min-width: 1200px) {
+  .logo {
+    height: 30px; /* Tablet */
+  }
+}
+
+
 .logo-dark {
     display: none;
 }
