@@ -700,6 +700,7 @@ footer a i {
 @media (prefers-color-scheme: dark) and (max-width: 768px) {
   .profile-img {
     background-color: #FFCA42;
+    border-radius: 50%;
   }
 }
 @media (prefers-color-scheme: dark) {
