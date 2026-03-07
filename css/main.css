@@ -627,7 +627,7 @@ footer a i {
 
 @media (prefers-color-scheme: dark) {
   body, #hero-section {
-    background-color: #2d2922;
+    background-color: #332f29;
     color: #E6E0D2;
   }
   h1, h2, h3, p {
