@@ -22,7 +22,7 @@ $color-border: #d1d0cd;
 $color-primary-dark: #FFCA42;
 $color-primary-hover-dark: #F3B81F;
 $color-primary-300-dark: #FFD770;
-$color-bg-dark: #2d2922;
+$color-bg-dark: #24221d;
 $color-text-dark: #E6E0D2;
 $color-secondary-dark: #917F2E;
 $color-navbar-dark: rgb(57, 56, 52);
@@ -776,7 +776,12 @@ footer {
 // DARK THEME
 @media (prefers-color-scheme: dark) {
   // Sfondo e testo
-  body, #hero-section {
+    body {
+        background-color: $color-bg-dark;
+        color: $color-text-dark;
+    }
+    
+  #hero-section {
     background-color: #332f29;
     color: $color-text-dark;
   }
